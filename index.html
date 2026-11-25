@@ -33,3 +33,4 @@ async function act(action,name){if(busy||!ready)return;busy=true;++serial;const 
  catch{$('result').textContent='連線失敗，請確認名單後再試。'}finally{busy=false;render();sync()}}
 $('spin').onclick=()=>act('draw');$('reset').onclick=()=>{if(confirm('重新開始本輪，將 20 位同學全部放回轉盤？'))act('reset')};$('tabs').onclick=e=>{if(e.target.dataset.tab!==undefined){tab=Number(e.target.dataset.tab);render()}};$('list').onclick=e=>{if(e.target.dataset.action)act(e.target.dataset.action,e.target.dataset.name)};render();sync();setInterval(sync,2500);
 </script></html>
+
